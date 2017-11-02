@@ -3,6 +3,7 @@
         "name": "Test Task",
         "url": "https://www.github.com/expfactory-experiments/test-task",
         "template":"jspsych",
+        "description":"The text task shows a brief X on the screen to respond to.",
         "exp_id": "test-task",
         "cognitive_atlas_task_id": "tsk_4a57abb949dc8",
         "contributors": [
