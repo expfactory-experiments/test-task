@@ -1,38 +1,17 @@
-[
-    {
-        "name": "Test Task",
-        "url": "https://www.github.com/expfactory-experiments/test-task",
-        "template":"jspsych",
-        "description":"The text task shows a brief X on the screen to respond to.",
-        "exp_id": "test-task",
-        "cognitive_atlas_task_id": "tsk_4a57abb949dc8",
-        "contributors": [
-                         "Ian Eisenberg",
-                         "Zeynep Enkavi",
-                         "Patrick Bissett",
-                         "Vanessa Sochat",
-                         "Russell Poldrack"
-                        ], 
-        "time":1,
-        "experiment_variables": [{
-                                 "name":"performance_var",
-                                 "type":"bonus",
-                                 "datatype": "numeric",
-                                 "range": [0,1000],
-                                 "description":"Faster responses get higher values"
-                                  },
-                                  {
-                                 "name":"credit_var",
-                                 "type":"credit",
-                                 "datatype": "boolean",
-                                 "description":"True if avg_rt > 200"
-                                  }],
-        "reference": "http://www.sciencedirect.com/science/article/pii/0001691869900651",
-        "publish":"True",
-        "deployment_variables":{"jspsych_init":
-                                        {"fullscreen": true,
-                                        "display_element": "getDisplayElement",
-                                        "on_trial_finish": "addID('test_task')"}
-                       }
-   }
-]
+{
+    "name": "Test Task",
+    "exp_id": "test-task",
+    "url": "https://www.github.com/expfactory-experiments/test-task",
+    "description":"The text task shows a brief X on the screen to respond to.",
+    "template":"jspsych",
+    "cognitive_atlas_task_id": "tsk_4a57abb949dc8",
+    "contributors": [
+                     "Ian Eisenberg",
+                     "Zeynep Enkavi",
+                     "Patrick Bissett",
+                     "Vanessa Sochat",
+                     "Russell Poldrack"
+                    ], 
+    "time":1,
+    "reference": ["http://www.sciencedirect.com/science/article/pii/0001691869900651"]
+}
