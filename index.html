@@ -33,9 +33,37 @@ $( document ).ready(function() {
              on_trial_finish: function(data){
                addID('test-task')
              },
+
              on_finish: function(data){
-                jsPsych.data.localSave('test-task_results.csv', 'csv');
-                expfactory_finished = true;
+
+                 // Serialize the data
+                 var promise = new Promise(function(resolve, reject) {
+                     var data = jsPsych.data.dataAsJSON();
+                     resolve(data);
+                 });
+
+                 promise.then(function(data) {
+
+                     $.post("/next", {data: data}, function(result){
+                        console.log(result)
+                     })
+                     .done(function() {
+                        console.log( "second success" );
+                     })
+                     .fail(function() {
+                        console.log( "error" );
+                     })
+                    .always(function() {
+                        console.log( "finished" );
+                     });
+
+
+                 }, function(err) {
+                   console.log(err);
+
+                   // If error, assue local save
+                   jsPsych.data.localSave('test-task_results.csv', 'csv');
+                });
               }
             });
 });
