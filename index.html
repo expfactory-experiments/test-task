@@ -47,10 +47,12 @@ $( document ).ready(function() {
                      $.post("/next", {data: data}, function(result){
                         console.log(result)
                      })
-                     .done(function() {
+                     .done(function(result) {
+                        console.log(result);
                         console.log( "second success" );
                      })
-                     .fail(function() {
+                     .fail(function(error) {
+                        console.log(error);
                         console.log( "error" );
                      })
                     .always(function() {
