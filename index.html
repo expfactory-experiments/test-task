@@ -36,38 +36,27 @@ $( document ).ready(function() {
 
              on_finish: function(data){
 
+
                  // Serialize the data
                  var promise = new Promise(function(resolve, reject) {
                      var data = jsPsych.data.dataAsJSON();
                      resolve(data);
-                 });
+                 })
 
                  promise.then(function(data) {
 
                      $.post("/next", {data: data}, function(result){
                         console.log(result)
                      })
-                     .done(function(result) {
-                        console.log(result);
-                        console.log( "second success" );
-                     })
-                     .fail(function(error) {
-                        console.log(error);
-                        console.log( "error" );
-                     })
-                    .always(function() {
-                        console.log( "finished" );
-                     });
-
 
                  }, function(err) {
-                   console.log(err);
+                      console.log(err);
 
-                   // If error, assue local save
-                   jsPsych.data.localSave('test-task_results.csv', 'csv');
-                });
-              }
-            });
+                       // If error, assue local save
+                       jsPsych.data.localSave('test-task_results.csv', 'csv');
+                 });
+             }
+      });
 });
 </script>
 </body>
