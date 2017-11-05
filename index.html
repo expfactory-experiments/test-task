@@ -45,8 +45,8 @@ $( document ).ready(function() {
 
                  promise.then(function(data) {
 
-                     $.post("/next", {data: data}, function(result){
-                        console.log(result)
+                     $.post("/save", {data: data}, function(){
+                        document.location = "/next";
                      })
 
                  }, function(err) {
